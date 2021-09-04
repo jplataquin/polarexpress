@@ -112,6 +112,9 @@ module.exports = class PolarExpress {
     }
 
     port(port,callback){
+
+        callback  = callback ?? ()=>{};
+        
          if(this.option.cert && this.option.key){
 
             https.createServer(this.options, this.app).listen(port, function(){
