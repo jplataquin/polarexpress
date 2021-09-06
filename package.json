@@ -1,6 +1,6 @@
 {
   "name": "polarexpress",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "HTML templating and middleware wrapper for express.js",
   "main": "index.js",
   "scripts": {

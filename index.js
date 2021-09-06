@@ -80,7 +80,11 @@ module.exports = class PolarExpress {
 
             for(let i = 0; i <= middleware.length - 1; i++){
                 
-                answer = await middleware[i]({req:req, res:res},answer);
+                answer = await middleware[i]({req:req, res:res, result:answer});
+                
+                if(answer === false){
+                    break;
+                }
             }
 
             callback({req:req,res:res,result:answer},viewFactory(res));
@@ -100,7 +104,11 @@ module.exports = class PolarExpress {
 
             for(let i = 0; i <= middleware.length - 1; i++){
                 
-                answer = await middleware[i]({req:req, res:res},answer);
+                answer = await middleware[i]({req:req, res:res, result:answer});
+
+                if(answer === false){
+                    break;
+                }
             }
 
             callback({req:req,res:res,result:answer},viewFactory(res));
